@@ -182,22 +182,6 @@ let HomeScreen = (props:any)=>{
                                 />
                             </Card>
                         </View>
-                        <View style={styles.cardboxItem}>
-                            <Card flex height={160} onPress={() => {}} useNative activeOpacity={1}>
-                                <Card.Section
-                                    bg-red30
-                                    imageSource={fenpeibl}
-                                    imageStyle={{width:'100%', height: '100%'}}
-                                />
-                                <Card.Section
-                                    bg-white
-                                    padding-20
-                                    flex
-                                    content={[{text: 'All site', text70: true, grey10: true}]}
-                                    contentStyle={{alignItems: 'center', margin: 0, padding: 0}}
-                                />
-                            </Card>
-                        </View>
                     </View>
                     <View padding-20>
                         <Text text40>Picker</Text>
@@ -210,6 +194,7 @@ let HomeScreen = (props:any)=>{
                             topBarProps={{title: 'Languages'}}
                             style={{color: Colors.red20}}
                             showSearch
+                            useSafeArea={true}
                             searchPlaceholder={'Search a language'}
                             searchStyle={{color: Colors.blue30, placeholderTextColor: Colors.grey50}}
                             // onSearchChange={value => console.warn('value', value)}
@@ -226,6 +211,7 @@ let HomeScreen = (props:any)=>{
                                 onChange={items => setLanguages(items)}
                                 mode={Picker.modes.MULTI}
                                 selectionLimit={3}
+                                useSafeArea={true}
                                 rightIconSource={dropdown}
                             >
                                 {_.map(options, option => (
@@ -241,6 +227,7 @@ let HomeScreen = (props:any)=>{
                                 value={nativePickerValue}
                                 onChange={nativePickerValue => setNativePickerValue(nativePickerValue)}
                                 rightIconSource={dropdown}
+                                useSafeArea={true}
                                 containerStyle={{marginTop: 20}}
                                 renderPicker={() => {
                                   return (
@@ -263,6 +250,7 @@ let HomeScreen = (props:any)=>{
                             // @ts-expect-error
                             containerStyle={{marginVertical: 20}}
                             title={'Date'}
+                            useSafeArea={true}
                             placeholder={'Select a date'}
                             dateFormat={'MMM D, YYYY'}
                             value={new Date('October 13, 2014')}
@@ -271,7 +259,7 @@ let HomeScreen = (props:any)=>{
                             Custom Input
                         </Text>
                         <DateTimePicker
-                            
+                            useSafeArea={true}
                             containerStyle={{marginVertical: 20}}
                             title={'Date'}
                             placeholder={'Select a date'}
@@ -328,6 +316,7 @@ const styles = StyleSheet.create({
     cardbox:{
         flexDirection:'row',
         marginLeft:15,
+        marginTop:15
     },
     cardboxItem:{
         flex:1,

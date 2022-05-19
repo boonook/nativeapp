@@ -5,6 +5,7 @@
 # mobx （操作store更简单）
 <img src="./src/assess/images/tinified/46E58B2B-A339-4779-B666-89DC1FCCE5E6.png" width="500px" alt="male" /> 
 
+# axios网络请求封装
 
 # 扫码 识别图中的二维码
 <img src="./src/assess/images/tinified/42039E4075591BD1CED311A585DC95E1.jpg" width="300px" alt="male" /> 
