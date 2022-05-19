@@ -244,7 +244,7 @@ let HomeScreen = (props:any)=>{
                             </Picker>
                         </View>
                     </View>
-                    <View>
+                    <View padding-20>
                         <Text text40>Date Time Picker</Text>
                         <DateTimePicker
                             // @ts-expect-error
