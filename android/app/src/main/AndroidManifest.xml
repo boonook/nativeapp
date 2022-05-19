@@ -1,0 +1,71 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.nativetypescriptapp">
+
+    <!--  网络权限  -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--  读取存储权限  -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!--  写存储权限  -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--  相机权限  -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!--录音-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <!-- 震动权限  -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 安装更新包-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 发送短信 -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <!-- 读取短信 -->
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <!-- 接收短信 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher"
+      android:allowBackup="false"
+      android:usesCleartextTraffic="true"
+      android:networkSecurityConfig="@xml/network_security_config"
+      android:requestLegacyExternalStorage="true"
+      android:theme="@style/AppTheme">
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:launchMode="singleTask"
+        android:exported="true"
+        android:windowSoftInputMode="adjustResize">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <!--要想在别的App上能成功调起App，必须添加intent过滤器-->
+        <!-- bhgj://start/login?pageId=102 -->
+        <intent-filter android:autoVerify="true">
+            <!--下面这几行也必须得设置-->
+            <!--表示该页面可以被隐式调用，必须加上该项-->
+            <category android:name="android.intent.category.DEFAULT"/>
+            <action android:name="android.intent.action.VIEW"/>
+            <!--如果希望该应用可以通过浏览器的连接启动，则添加该项-->
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <!--协议部分，随便设置-->
+            <data
+                android:host="com.nativetypescriptapp"
+                android:path="/login"
+                android:scheme="bbgj"/>
+        </intent-filter>
+      </activity>
+    </application>
+</manifest>
