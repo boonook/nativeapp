@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import _ from 'lodash';
 import { StyleSheet, ScrollView,Linking} from 'react-native';
+import DeviceInfo from 'react-native-device-info';
 import {
     Text,
     View,
@@ -64,6 +65,15 @@ let MeScreen = (props:any)=>{
     function openDrawer(){
         props.navigation.toggleDrawer();
     }
+
+    function onAboutMe(){
+        NavigationService.navigate('aboutMe');
+    }
+
+    useEffect(()=>{
+        console.log('DeviceInfo--------------',DeviceInfo.getVersion());
+        console.log('DeviceInfo--------------',DeviceInfo.getApplicationName());
+    },[])
 
     return (
             <View style={{flex: 1, backgroundColor: '#eee'}}>
@@ -157,6 +167,17 @@ let MeScreen = (props:any)=>{
                                 </View>
                                 <View style={styles.cardboxItemTextBox}>
                                     <Text style={styles.cardboxItemText}>官网</Text>
+                                    <Icon source={require('@/assess/images/me/right.png')} size={20} tintColor={'#444'}/>
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>onAboutMe()}>
+                            <View style={styles.cardboxItem}>
+                                <View>
+                                    <ImageScreen width={30} setHeight={height=>{    }} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                </View>
+                                <View style={styles.cardboxItemTextBox}>
+                                    <Text style={styles.cardboxItemText}>关于我们</Text>
                                     <Icon source={require('@/assess/images/me/right.png')} size={20} tintColor={'#444'}/>
                                 </View>
                             </View>

@@ -20,6 +20,7 @@ import EditPayPwdScreen from '@/screen/me/common/EditPayPwdScreen';
 import WebViewScreen from '@/screen/webview/WebViewScreen';
 import ScanCodeScreen from '@/screen/me/common/ScanCodeScreen';
 import UserInfoScreen from '@/screen/me/common/UserInfoScreen';
+import AboutMeScreen from '@/screen/me/common/AboutMeScreen';
 import NavigationService from '@/utils/NavigationService';
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -37,6 +38,7 @@ const Menu = [
     {name:'mySetting',component:MySettingScreen,params:{statusbar:'dark-content'}},
     {name:'webView',component:WebViewScreen,params:{statusbar:'dark-content'}},
     {name:'userPage',component:UserInfoScreen,params:{statusbar:'dark-content'}},
+    {name:'aboutMe',component:AboutMeScreen,params:{statusbar:'dark-content'}},
 ];
 
 function HomeTab() {
