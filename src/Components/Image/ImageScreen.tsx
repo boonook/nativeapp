@@ -3,20 +3,23 @@ import {
     Image,
     View,
 } from 'react-native';
-
+import {CachedImage} from 'react-native-img-cache';
 let ImageScreen = (props:any)=>{
     let [imageH,setImageH] = useState(100);
     let [isLoading,setIsLoading] = useState(true);
+    let [isHttp,setIsHttp] = useState(false);
     useEffect(()=>{
         if(props.source.uri){
             console.log('网络图片');
-            Image.getSize(props.source,(width, height)=>{
+            setIsHttp(true);
+            Image.getSize(props.source.uri,(width, height)=>{
                 setImageH(props.width * height / width);
                 console.log(props.width * height / width);
                 setIsLoading(false);
             })
         }else{
             console.log('本地资源')
+            setIsHttp(false);
             const result =  Image.resolveAssetSource(props.source)
             let height = result.height
             let width = result.width
@@ -32,12 +35,21 @@ let ImageScreen = (props:any)=>{
             <View style={{width:props.width,height:props.width,backgroundColor:'#eee'}}></View>
         )
     }else{
-        return (
-            <Image
-                style={[props.style,{height:imageH,width:props.width}]}
-                source={props.source}
-            />
-        )
+        if(isHttp){
+            return (
+                <CachedImage
+                    style={[props.style,{height:imageH,width:props.width}]}
+                    source={props.source}
+                />
+            )
+        }else{
+            return (
+                <Image
+                    style={[props.style,{height:imageH,width:props.width}]}
+                    source={props.source}
+                />
+            )
+        }
     }
 }
 

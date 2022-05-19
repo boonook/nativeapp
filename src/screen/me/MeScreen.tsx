@@ -12,6 +12,7 @@ import {
     Button
 } from 'react-native-ui-lib';
 import ImageScreen from '@/Components/Image/ImageScreen'
+import ImageBackgroundScreen from '@/Components/Image/ImageBackgroundScreen'
 import Headers from '@/Components/header/Headers';
 import {openCameraPermission} from '@/utils/camera';
 import NavigationService from "@/utils/NavigationService";
@@ -23,9 +24,6 @@ let MeScreen = (props:any)=>{
         {url:"https://cdn.133.cn/ticket/vue/promotion/zhoubichang/gtgjshare.png"},
         {url:'https://cdn.133.cn/ticket/vue/promotion/zhoubichang/hbgjshare.png'}
     ]
-    useEffect(()=>{
-       
-    },[])
 
     function onGoUserInfoPage(){
         NavigationService.navigate('userPage');
@@ -164,6 +162,16 @@ let MeScreen = (props:any)=>{
                             </View>
                         </TouchableOpacity>
                     </View>
+                    <ImageScreen width={100} source={{uri:'https://cdn.133.cn/ticket/vue/promotion/zhoubichang/gtgjshare.png'}}/>
+                    <ImageBackgroundScreen width={100} source={{uri:'https://cdn.133.cn/ticket/vue/promotion/zhoubichang/hbgjshare.png'}}>
+                        <View>
+                            <Text>测试</Text>
+                            <Text>测试</Text>
+                            <Text>测试</Text>
+                            <Text>测试</Text>
+                            <Text>测试</Text>
+                        </View>
+                    </ImageBackgroundScreen>
                 </ScrollView>
                 <Dialog
                     visible={visible}
