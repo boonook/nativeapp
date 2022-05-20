@@ -1,5 +1,6 @@
 import React,{useState} from "react";
-import {StyleSheet, StatusBar} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {size} from '@/utils';
 import Headers from '@/Components/header/Headers';
 import {userStore} from '@/contexts/storeHooks';
 import {
@@ -82,28 +83,29 @@ const styles = StyleSheet.create({
     loginOutBtn:{
         width:'100%',
         backgroundColor:"#fff",
-        height:50,
-        marginTop:20,
-        borderRadius:5
+        height:size(50),
+        marginTop:size(20),
+        borderRadius:size(5)
     },
     oginOutBtn:{
         width:'100%',
         backgroundColor:"#fff",
-        height:50,
-        marginTop:20,
-        borderRadius:5
+        height:size(50),
+        marginTop:size(20),
+        borderRadius:size(5)
     },
     loginOutBtnText:{
-        lineHeight:50,
-        textAlign:'center'
+        lineHeight:size(50),
+        textAlign:'center',
+        fontSize:size(16)
     },
     contentBoxTop:{
-        marginTop:20
+        marginTop:size(20)
     },
     roundedDialog: {
         backgroundColor: Colors.white,
-        marginBottom: Constants.isIphoneX ? 0 : 20,
-        borderRadius: 12
+        marginBottom: Constants.isIphoneX ? 0 : size(20),
+        borderRadius: size(12)
     },
 })
 

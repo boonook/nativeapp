@@ -4,6 +4,7 @@ import { View,StyleSheet,Platform,StatusBar} from 'react-native';
 import SplashScreen from 'react-native-splash-screen'
 import NavigationService from "@/utils/NavigationService";
 import {userStore} from '@/contexts/storeHooks';
+import {size} from '@/utils';
 
 let LoadingScreen = (props:any)=>{
     const store:any = userStore();
@@ -49,8 +50,8 @@ const styles = StyleSheet.create({
         position:'absolute',
         zIndex:9999,
         elevation:9999,
-        top:60,
-        right:10,
+        top:size(60),
+        right:size(10),
     },
     timeBoxText:{
         color:'#fff'

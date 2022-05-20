@@ -18,7 +18,7 @@ import {
 import Headers from '@/Components/header/Headers';
 import Languagess from '@/language/Language'
 import {longOptions} from './longOptions';
-
+import {size} from '@/utils';
 let HomeScreen = (props:any)=>{
     const ButtonSpace = 20;
     const {Toast} = Incubator;
@@ -84,11 +84,11 @@ let HomeScreen = (props:any)=>{
                     {...props}
                 />
                 <ScrollView>
-                    <View style={{margin:20}}>
+                    <View style={{margin:size(20)}}>
                         <Text blue50 text20>Welcome</Text>
                         <Icon
                             margin-30
-                            size={24}
+                            size={size(24)}
                             tintColor={'orange'}
                             source={Assets.icons.search}
                         />
@@ -103,8 +103,8 @@ let HomeScreen = (props:any)=>{
                         <Button
                             backgroundColor="#FB3C62"
                             label="Get 3 Months Free"
-                            borderRadius={7}
-                            style={{height: 45, marginBottom: ButtonSpace}}
+                            borderRadius={size(7)}
+                            style={{height:size(45), marginBottom: ButtonSpace}}
                         />
                         <Button
                             label={'Red Button'}
@@ -114,7 +114,7 @@ let HomeScreen = (props:any)=>{
                     </View>
                     <View style={styles.cardbox}>
                         <View style={styles.cardboxItem}>
-                            <Card flex height={160} onPress={() => {}} useNative activeOpacity={1}>
+                            <Card flex height={size(160)} onPress={() => {}} useNative activeOpacity={1}>
                                 <Card.Section
                                     bg-red30
                                     padding-20
@@ -135,7 +135,7 @@ let HomeScreen = (props:any)=>{
                             </Card>
                         </View>
                         <View style={styles.cardboxItem}>
-                            <Card flex height={160} onPress={() => {}} useNative activeOpacity={1}>
+                            <Card flex height={size(160)} onPress={() => {}} useNative activeOpacity={1}>
                                 <Card.Section
                                     bg-red30
                                     padding-20
@@ -158,7 +158,7 @@ let HomeScreen = (props:any)=>{
                     </View>
                     <View style={styles.cardbox}>
                         <View style={styles.cardboxItem}>
-                            <Card flex height={160} onPress={() => {}} useNative activeOpacity={1}>
+                            <Card flex height={size(160)} onPress={() => {}} useNative activeOpacity={1}>
                                 <Card.Section
                                     bg-red30
                                     padding-20
@@ -242,7 +242,7 @@ let HomeScreen = (props:any)=>{
                         <Text text40>Date Time Picker</Text>
                         <DateTimePicker
                             // @ts-expect-error
-                            containerStyle={{marginVertical: 20}}
+                            containerStyle={{marginVertical: size(20)}}
                             title={'Date'}
                             placeholder={'Select a date'}
                             dateFormat={'MMM D, YYYY'}
@@ -252,7 +252,7 @@ let HomeScreen = (props:any)=>{
                             Custom Input
                         </Text>
                         <DateTimePicker
-                            containerStyle={{marginVertical: 20}}
+                            containerStyle={{marginVertical: size(20)}}
                             title={'Date'}
                             placeholder={'Select a date'}
                             // @ts-expect-error
@@ -268,8 +268,8 @@ let HomeScreen = (props:any)=>{
                         <Button
                             backgroundColor="#FB3C62"
                             label="Get 3 Months Free"
-                            borderRadius={7}
-                            style={{height: 45, marginBottom: ButtonSpace}}
+                            borderRadius={size(7)}
+                            style={{height: size(45), marginBottom: ButtonSpace}}
                             onPress={()=>{
                                 setToastShow(true);
                             }}
@@ -307,12 +307,12 @@ const styles = StyleSheet.create({
     },
     cardbox:{
         flexDirection:'row',
-        marginLeft:15,
-        marginTop:15
+        marginLeft:size(15),
+        marginTop:size(15)
     },
     cardboxItem:{
         flex:1,
-        marginRight:15
+        marginRight:size(15)
     }
 })
 

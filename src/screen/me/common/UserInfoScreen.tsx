@@ -4,6 +4,7 @@ import Headers from '@/Components/header/Headers';
 import ImageScreen from '@/Components/Image/ImageScreen'
 import QRCodeScreen from '@/Components/QRCodeScreen/index'
 import {ActionSheetCustom as ActionSheet} from 'react-native-actionsheet'
+import {size} from '@/utils';  
 
 let UserInfoScreen = (props:any)=>{
     let [visible,setVisible] = useState(false);
@@ -29,15 +30,15 @@ let UserInfoScreen = (props:any)=>{
             <View style={styles.bodybox}>
                 <View style={styles.cardbox}>
                     <View style={styles.userInfobox}>
-                        <ImageScreen  style={styles.userInfoboxLeft} width={80} source={require('@/assess/images/me/touxiang.png')}/>
+                        <ImageScreen  style={styles.userInfoboxLeft} width={size(80)} source={require('@/assess/images/me/touxiang.png')}/>
                         <View style={styles.userInfoboxRight}>
                             <Text style={styles.userInfoboxRightTop}>猪猪</Text>
                             <Text style={styles.userInfoaddress}>湖北 十堰</Text>
                         </View>
                     </View>
                     <View style={styles.QRCodebox}>
-                        <View style={{width:260,height:260,marginTop:10}}>
-                            <QRCodeScreen value={'http://boonook.top'} size={240} {...props}/>
+                        <View style={{width:size(260),height:size(260),marginTop:size(10)}}>
+                            <QRCodeScreen value={'http://boonook.top'} size={size(240)} {...props}/>
                         </View>
                     </View>
                     <Text style={styles.QRCodeboxText}>扫一扫上面的二维码，加我为好友</Text>
@@ -75,8 +76,8 @@ const styles = StyleSheet.create({
     cardbox:{
         backgroundColor:'#fff',
         width:'90%',
-        padding:20,
-        borderRadius:8
+        padding:size(20),
+        borderRadius:size(8)
         // flexDirection:'column',
     },
     userInfobox:{
@@ -85,34 +86,34 @@ const styles = StyleSheet.create({
     },
     userInfoboxRight:{
         flex:1,
-        marginLeft:15,
+        marginLeft:size(15),
     },
     userInfoboxLeft:{
-        borderRadius:4,
+        borderRadius:size(4),
     },
     userInfoboxRightTop:{
-        fontSize:16,
+        fontSize:size(16),
         fontWeight:'600',
-        marginBottom:10
+        marginBottom:size(10)
     },
     userInfoaddress:{
         color:'#999',
-        fontSize:14,
+        fontSize:size(14),
     },
     QRCodebox:{
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
-        marginTop:20
+        marginTop:size(20)
     },
     QRCodeboxText:{
         textAlign:'center',
-        marginTop:20,
-        fontSize:12,
+        marginTop:size(20),
+        fontSize:size(12),
         color:'#999',
     },
     actionBox:{
-        fontSize:14,
+        fontSize:size(14),
         color:'#666' 
     }
 })

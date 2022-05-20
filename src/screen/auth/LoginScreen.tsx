@@ -70,7 +70,7 @@ let LoginScreen = (props:any)=>{
                             }} style={styles.input} placeholder={'请输入登陆密码'} secureTextEntry={true} />
                     </View>
                     <View style={styles.forget} >
-                        <Text onPress={() => onForgetPwd()}>忘记密码？</Text>
+                        <Text style={{fontSize:size(14) }} onPress={() => onForgetPwd()}>忘记密码？</Text>
                     </View>
                     <View style={[{ marginTop: 20 }]}>
                         <TouchableOpacity onPress={() => {
@@ -83,7 +83,7 @@ let LoginScreen = (props:any)=>{
                     </View>
                     <View>
                         <View style={{ marginTop: size(20) }}>
-                            <Text style={{ textAlign: 'center' }}>还没有账号?<Text onPress={() =>onRegistered()} style={{ color: colors.primary }}>立即注册</Text></Text>
+                            <Text style={{ textAlign: 'center',fontSize:size(14) }}>还没有账号?<Text onPress={() =>onRegistered()} style={{ color: colors.primary }}>立即注册</Text></Text>
                         </View>
                     </View>
                 </View>
@@ -121,20 +121,20 @@ const styles = StyleSheet.create({
     },
     form: {
         width: '100%',
-        paddingRight: 30,
-        paddingLeft: 30,
+        paddingRight: size(30),
+        paddingLeft: size(30),
     },
     formItem: {
         borderWidth: 1,
         borderColor: '#ccc',
-        paddingVertical: 8,
-        paddingHorizontal: 4,
+        paddingVertical: size(8),
+        paddingHorizontal: size(4),
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        borderRadius: 30,
-        paddingLeft: 30,
-        paddingRight: 30,
+        borderRadius: size(30),
+        paddingLeft: size(30),
+        paddingRight: size(30),
     },
     icon: {
         width: size(15),
@@ -143,14 +143,14 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         height: size(35),
-        marginLeft: 15,
+        marginLeft: size(15),
         fontSize: size(15),
     },
     forget: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        marginTop: 20,
+        marginTop: size(20),
     },
     login_box_footer_btn: {
         width: '100%',
@@ -159,20 +159,21 @@ const styles = StyleSheet.create({
         borderRadius: 25.5,
     },
     login_box_footer_btn_text: {
-        height: 45,
-        lineHeight: 45,
+        height: size(45),
+        lineHeight: size(45),
         textAlign: 'center',
         color: '#fff',
-        fontSize: 17,
+        fontSize: size(17),
     },
     logopage: {
-        fontSize: 30,
+        fontSize: size(30),
         fontWeight: '700',
-        marginBottom: 30,
+        marginBottom: size(30),
     },
     loginBox: {
         textAlign: 'center',
-        paddingBottom: 30,
+        paddingBottom: size(30),
+        fontSize:size(14),
         color: '#999',
     },
 });

@@ -19,6 +19,7 @@ import {
     Icon,
     Incubator
   } from 'react-native-ui-lib';
+  import {size} from '@/utils';  
   const width = Dimensions.get('window').width;
 let ScanCodeScreen = (props:any)=>{
     const {Toast} = Incubator;
@@ -90,7 +91,7 @@ let ScanCodeScreen = (props:any)=>{
                     leftContent={
                         <TouchableOpacity onPress={()=>goBack()}>
                             <View style={styles.backBtn}>
-                                <Icon source={require('@/assess/images/icon/back.png')} size={14} tintColor={'#000'}/>
+                                <Icon source={require('@/assess/images/icon/back.png')} size={size(14)} tintColor={'#000'}/>
                             </View>
                         </TouchableOpacity>
                     }
@@ -98,9 +99,9 @@ let ScanCodeScreen = (props:any)=>{
                     {...props}
                 />
                 <View style={styles.LoadingPage}>
-                    <View style={{marginTop:-200}}>
+                    <View style={{marginTop:size(-200)}}>
                         <ActivityIndicator size="large" color="#444" />
-                        <Text style={{ marginLeft: 10,color:"#444",marginTop:10 }}>正在加载...</Text>
+                        <Text style={{ marginLeft:size(10),color:"#444",marginTop:size(10) }}>正在加载...</Text>
                     </View>
                 </View>
             </View>
@@ -161,33 +162,33 @@ const styles = StyleSheet.create({
     loginOutBtn:{
         width:'100%',
         backgroundColor:"#fff",
-        height:50,
-        marginTop:20,
-        borderRadius:5
+        height:size(50),
+        marginTop:size(20),
+        borderRadius:size(5)
     },
     oginOutBtn:{
         width:'100%',
         backgroundColor:"#fff",
-        height:50,
-        marginTop:20,
-        borderRadius:5
+        height:size(50),
+        marginTop:size(20),
+        borderRadius:size(5)
     },
     loginOutBtnText:{
-        lineHeight:50,
+        lineHeight:size(50),
         textAlign:'center'
     },
     contentBoxTop:{
-        marginTop:20
+        marginTop:size(20)
     },
     roundedDialog: {
         backgroundColor: Colors.white,
-        marginBottom: Constants.isIphoneX ? 0 : 20,
-        borderRadius: 12
+        marginBottom: Constants.isIphoneX ? 0 : size(20),
+        borderRadius: size(12)
     },
     backBtn:{
         backgroundColor:Colors.white,
-        padding:5,
-        borderRadius:25
+        padding:size(5),
+        borderRadius:size(25)
     },
     LoadingPage: {
         flex:1,
@@ -195,7 +196,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     barcodeTextURL: {
-        fontSize: 20,
+        fontSize:size(20),
         color: 'white',
         fontWeight: 'bold',
     },

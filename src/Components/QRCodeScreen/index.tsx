@@ -3,6 +3,7 @@ import { View,TouchableNativeFeedback,Text} from 'react-native'
 import ViewShot,{captureRef} from "react-native-view-shot";
 import QRCode from 'react-native-qrcode-svg';
 import {SaveImg} from '@/utils/selectImg'
+import {size} from '@/utils';
 import Language from '@/language/Language'
 let QRCodeScreen = (props:any)=>{
     const saveQRCode = useRef();
@@ -25,10 +26,10 @@ let QRCodeScreen = (props:any)=>{
         <View>
             <ViewShot captureMode="mount" ref={saveQRCode} style={{flex:1,flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
                 <TouchableNativeFeedback onLongPress={()=>onSaveQRCode()}>
-                    <View style={{padding:10,backgroundColor:'#fff',borderRadius:4}}>
+                    <View style={{padding:size(10),backgroundColor:'#fff',borderRadius:size(4)}}>
                         <QRCode
                             value={props.value}
-                            size={props.size||120}
+                            size={props.size||size(20)}
                         />
                     </View>
                 </TouchableNativeFeedback>

@@ -1,5 +1,19 @@
 import {check, PERMISSIONS, RESULTS, request} from 'react-native-permissions';
 import {Platform,Alert} from 'react-native';
+const permissionArr = [
+  {
+    type:'CAMERA',
+    title:'我需要您的相机权限',
+  },
+  {
+    type:'Contacts',
+    title:'我需要获取您的通讯录权限',
+  },
+  {
+    type:'Contacts',
+    title:'我需要获取您的通讯录权限',
+  }
+]
 export const ApplyPermissions = () => {
   let params={
     title:'我要读写权限',

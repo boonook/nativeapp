@@ -21,6 +21,7 @@ import {callPthon,copyText} from '@/utils/nativeApi'
 import Language from '@/language/Language'
 import {userStore} from '@/contexts/storeHooks';
 import I18n from 'i18n-js'
+import {size} from '@/utils';
 import * as RNLocalize from 'react-native-localize';
 import {readerQR} from 'react-native-lewin-qrcode'
 import {ApplyPermissions} from '@/utils/permissions'
@@ -205,7 +206,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onGoMySettingPage()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} setHeight={height=>{    }} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} setHeight={height=>{    }} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>设置中心</Text>
                                     </View>
@@ -215,7 +216,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onGoScanCodePage()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>扫一扫</Text>
                                     </View>
@@ -225,7 +226,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onGoWebViewPage()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>前往WebView</Text>
                                     </View>
@@ -235,7 +236,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onViewImg()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>图片预览</Text>
                                     </View>
@@ -245,7 +246,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onUploadImg()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>上传头像</Text>
                                     </View>
@@ -255,7 +256,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onSelectImg()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>选择图片</Text>
                                     </View>
@@ -265,7 +266,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onCallMerchant()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>联系商家</Text>
                                     </View>
@@ -275,7 +276,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onCopy()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>复制文本到剪切板</Text>
                                     </View>
@@ -285,7 +286,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onOpen()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>Linking openURL</Text>
                                     </View>
@@ -295,7 +296,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onQrcodeShibie()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>识别图片中的二维码2</Text>
                                     </View>
@@ -305,7 +306,7 @@ const DrawerScreen = (props) => {
                                 <TouchableOpacity onPress={()=>onGetQuanXian()}>
                                     <View>
                                         <View>
-                                            <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                            <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                         </View>
                                         <Text>权限操作</Text>
                                     </View>
@@ -314,11 +315,11 @@ const DrawerScreen = (props) => {
                             {files.map((item,index)=>{
                                 return (
                                     <View key={index}>
-                                        <ImageScreen width={120} setHeight={(height)=>{console.log(height)}} source={{uri:item.path}}/>
+                                        <ImageScreen width={size(120)} setHeight={(height)=>{console.log(height)}} source={{uri:item.path}}/>
                                     </View>
                                 )
                             })}
-                            <QRCodeScreen value={'http://boonook.top'} size={140} saveImg={saveImg} {...props}/>
+                            <QRCodeScreen value={'http://boonook.top'} size={size(140)} saveImg={saveImg} {...props}/>
                             <Button
                                 backgroundColor="#30B650"
                                 label="打开抽屉"
@@ -399,19 +400,19 @@ const styles = StyleSheet.create({
     },
     cardbox:{
         flexDirection:'row',
-        marginLeft:15,
+        marginLeft:size(15),
     },
     cardboxItem:{
         flex:1,
-        marginRight:15
+        marginRight:size(15),
     },
     roundedDialog:{
         backgroundColor:'#fff',
-        padding:16,
-        borderRadius:8
+        padding:size(15),
+        borderRadius:size(8),
     },
     dialogModalHeader:{
-        fontSize:16,
+        fontSize:size(16),
         fontWeight:'500',
         color:'orange'
     },

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {size} from '@/utils';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -118,15 +119,15 @@ function Routers() {
 
 const styles = StyleSheet.create({
     tabCenter:{
-        width:50,
-        height:50,
+        width:size(50),
+        height:size(50),
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'center',
     },
     IconImage:{
-        width: 24,
-        height: 24,
+        width: size(24),
+        height: size(24),
     },
 });
 

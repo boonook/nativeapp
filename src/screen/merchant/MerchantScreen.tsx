@@ -13,10 +13,10 @@ import moment from 'moment'
 import ImageScreen from '@/Components/Image/ImageScreen';
 import {ListFooter,ListEmptyComponent} from '@/utils/ListFooter'
 import CLoading from '@/Components/CLoading'
+import {size} from '@/utils';
 let MerchantScreen = (props:any)=>{
     let [list,setList] = useState([{},{},{},{},{},{},{},{},{},{}]);
     let [total,setTotal] = useState(10000);
-    let [size,setSize] = useState(10);
     let [refreshing,setRefreshing] = useState(false);
     let [refreshing2,setRefreshing2] = useState(false);
     let [isLoading,setIsLoading] = useState(true);
@@ -86,7 +86,7 @@ let MerchantScreen = (props:any)=>{
                             <TouchableOpacity onPress={()=>onDetail(item)}>
                                 <View style={[styles.listItem,{borderBottomWidth:(list.length==index+1)?0:1}]}>
                                     <View style={styles.touxiang}>
-                                        <ImageScreen width={30} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
+                                        <ImageScreen width={size(30)} source={require('@/assess/images/me/wd_icon_gj08.png')}/>
                                     </View>
                                     <View style={styles.listItemRight}>
                                         <View style={styles.listItemRightTop}>
@@ -123,37 +123,39 @@ const styles = StyleSheet.create({
         alignItems:'center',
         flexWrap:'wrap',
         backgroundColor:'#fff',
-        padding:10,
-        marginTop:10,
-        borderRadius:5,
+        padding:size(10),
+        marginTop:size(10),
+        borderRadius:size(5),
         borderBottomColor:'#f9f9f9',
         borderStyle:'solid'
     },
     listItemRight:{
         flex:1,
         flexDirection:'column',
-        paddingLeft:15,
-        paddingRight:15,
-        marginTop:5,
-        marginBottom:5
+        paddingLeft:size(15),
+        paddingRight:size(15),
+        marginTop:size(5),
+        marginBottom:size(5),
     },
     listItemRightTop:{
         flex:1
     },
     listItemRightFooterText:{
         color:'#999',
-        marginTop:10
+        marginTop:size(10),
+        fontSize:size(12)
     },
     listItemRightTopText:{
-        lineHeight:20
+        lineHeight:size(20),
+        fontSize:size(16)
     },
     touxiang:{
-        width:100,
-        height:100,
+        width:size(100),
+        height:size(100),
         backgroundColor:'#f9f9f9',
         alignItems:'center',
         justifyContent:'center',
-        borderRadius:8
+        borderRadius:size(8)
     }
 });
 

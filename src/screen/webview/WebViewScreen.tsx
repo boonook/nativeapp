@@ -13,6 +13,7 @@ import {
 import { WebView } from 'react-native-webview';
 import DeviceInfo from 'react-native-device-info';
 import Spinner from 'react-native-spinkit'
+import {size} from '@/utils';
 import Headers from '@/Components/header/Headers';
 import qs from '@/utils/querystring'
 import NavigationService from '@/utils/NavigationService';
@@ -100,7 +101,7 @@ let WebViewScreen = (props:any)=>{
         return (
           <View style={styles.errorContainer}>
               <Text>数据加载失败，请确认网络连接</Text>
-              <View style={{marginTop:20}}>
+              <View style={{marginTop:size(20)}}>
                 <Button
                   backgroundColor="#30B650"
                   label="重新加载"
@@ -176,8 +177,8 @@ let WebViewScreen = (props:any)=>{
     function renderLoadingView(){
       return (
         <View style={styles.loadingBody}>
-            <Spinner type='Wave' color={'#999'} size={30}/>
-            <Text style={{ marginLeft: 10,color:"#444",marginTop:10 }}>正在加载...</Text>
+            <Spinner type='Wave' color={'#999'} size={size(30)}/>
+            <Text style={{ marginLeft:size(10),color:"#444",marginTop:size(10) }}>正在加载...</Text>
         </View>
       )
     }
@@ -297,16 +298,16 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 20
+        marginTop:size(20)
     },
     refreshBtn: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 10,
-        paddingVertical: 5,
-        paddingHorizontal: 10,
-        borderWidth: 1,
-        borderRadius: 10,
+        marginTop:size(10),
+        paddingVertical:size(5),
+        paddingHorizontal:size(10),
+        borderWidth:size(1),
+        borderRadius:size(10),
         borderColor: '#444'
     }
 });

@@ -17,6 +17,7 @@ import {
     Button
   } from 'react-native-ui-lib';
 import I18n from 'i18n-js'
+import {size} from '@/utils';
 import NavigationService from '@/utils/NavigationService';
 
 let MySettingScreen = (props:any)=>{
@@ -132,7 +133,7 @@ let MySettingScreen = (props:any)=>{
                     <TouchableOpacity style={styles.loginOutBtn} onPress={()=>onClear()}>
                         <View style={styles.listItemBox}>
                             <Text style={[styles.loginOutBtnText,{flex:1}]}>缓存数据</Text>
-                            <Text>{cacheSize}</Text>
+                            <Text style={styles.cacheText}>{cacheSize}</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -161,7 +162,7 @@ let MySettingScreen = (props:any)=>{
                           <View margin-20>
                             <Text>温馨提示！</Text>
                           </View>
-                          <View height={2} bg-grey70/>
+                          <View height={size(2)} bg-grey70/>
                         </View>
                       );
                 }}
@@ -190,35 +191,39 @@ let MySettingScreen = (props:any)=>{
 const styles = StyleSheet.create({
     loginOutBtn:{
         width:'100%',
-        height:50,
+        height:size(50),
         borderColor:'#eee',
-        borderBottomWidth:1,
+        borderBottomWidth:size(1),
         borderStyle:'solid',
     },
     oginOutBtn:{
         width:'100%',
-        height:50,
-        marginTop:20,
-        borderRadius:5
+        height:size(50),
+        marginTop:size(20),
+        borderRadius:size(5)
     },
     loginOutBtnText:{
-        lineHeight:50,
-        textAlign:'left'
+        lineHeight:size(50),
+        textAlign:'left',
+        fontSize:size(14)
+    },
+    cacheText:{
+        fontSize:size(16)
     },
     contentBoxTop:{
-        marginTop:20
+        marginTop:size(20)
     },
     roundedDialog: {
         backgroundColor: Colors.white,
-        marginBottom: Constants.isIphoneX ? 0 : 20,
-        borderRadius: 12
+        marginBottom: Constants.isIphoneX ? 0 : size(20),
+        borderRadius: size(12)
     },
     cardbox:{
         backgroundColor: Colors.white,
-        paddingLeft:15,
-        paddingRight:15,
-        marginTop:15,
-        borderRadius:4
+        paddingLeft:size(15),
+        paddingRight:size(15),
+        marginTop:size(15),
+        borderRadius:size(4)
     },
     listItemBox:{
         flexDirection:'row',

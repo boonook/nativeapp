@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { View,Text,StyleSheet,TextInput,StatusBar,Dimensions,TouchableOpacity} from 'react-native';
 import theme from '@/theme/theme.js'
+import {size} from '@/utils';
 import Headers from "@/Components/header/Headers";
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {getForgetPwdCode,resetPassword} from "@/Api/login";
@@ -102,7 +103,7 @@ const ForgetPasswordSccreen = (props) => {
                                 }} placeholder="请输入验证码" keyboardType='numeric' style={styles.formItemRightText}/>
                             </View>
                             <View style={styles.getCodeBtn}>
-                                <Text onPress={_onGetCodeBtn}>{codeTitle}</Text>
+                                <Text style={{fontSize:size(14)}} onPress={_onGetCodeBtn}>{codeTitle}</Text>
                             </View>
                         </View>
                     </KeyboardAwareScrollView>
@@ -125,81 +126,82 @@ const styles = StyleSheet.create({
     },
     leftContentTitle:{
         color:'#fff',
-        paddingLeft:5
+        paddingLeft:size(5)
     },
     headerBoxCenterText:{
         textAlign:'center',
         fontWeight:'600',
-        fontSize:16
+        fontSize:size(16)
     },
     formContent:{
         flex:1,
-        paddingLeft:24,
-        paddingRight:24,
+        paddingLeft:size(24),
+        paddingRight:size(24),
     },
     formContentTop:{
         backgroundColor:theme.backgroundColor,
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
-        paddingTop:30,
-        paddingBottom:30
+        paddingTop:size(30),
+        paddingBottom:size(30)
     },
     formContentTopLogoBox:{
-        width:80,
-        height:80,
+        width:size(80),
+        height:size(80),
         backgroundColor:'#fff',
-        borderRadius:40,
+        borderRadius:size(40),
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'center'
     },
     formContentTopTitle:{
-        paddingTop:30,
+        paddingTop:size(30),
         color:'#fff',
-        fontSize:16
+        fontSize:size(16)
     },
     formContentCenter:{
         flex:1,
-        paddingLeft:24,
-        paddingRight:24,
+        paddingLeft:size(24),
+        paddingRight:size(24),
     },
     formItem:{
         backgroundColor:'#eee',
         flexDirection:'row',
         alignItems:'center',
-        height:50,
-        lineHeight:50,
-        paddingLeft:12,
-        paddingRight:12,
-        borderRadius:5
+        height:size(50),
+        lineHeight:size(50),
+        paddingLeft:size(12),
+        paddingRight:size(12),
+        borderRadius:size(5)
     },
     IconImage:{
-        width:34,
-        height:34
+        width:size(34),
+        height:size(34)
     },
     formItemRight:{
         flex:1
     },
     formItemRightText:{
-        paddingLeft:12
+        paddingLeft:size(12),
+        fontSize:size(14)
     },
     loginBtn:{
         width:'100%',
-        height:50,
-        marginTop:20,
-        borderRadius:5,
-        marginBottom:30,
-        paddingLeft:24,
-        paddingRight:24,
+        height:size(50),
+        marginTop:size(20),
+        borderRadius:size(5),
+        marginBottom:size(30),
+        paddingLeft:size(24),
+        paddingRight:size(24),
     },
     forgetBox:{
         width:'100%',
-        marginTop:20,
+        marginTop:size(20),
     },
     zhuCeBox:{
         width:'100%',
-        marginTop:20,
+        marginTop:size(20),
     },
     zhuCeBoxText:{
         textAlign:'center',
@@ -207,9 +209,9 @@ const styles = StyleSheet.create({
     },
     loginBtnText:{
         color:'#fff',
-        lineHeight:50,
+        lineHeight:size(50),
         textAlign:'center',
-        fontSize:16
+        fontSize:size(16)
     },
     forgetBoxText:{
         textAlign:'right',
@@ -220,24 +222,25 @@ const styles = StyleSheet.create({
     },
     textArexx:{
         backgroundColor:'#eee',
-        paddingLeft:12,
-        paddingRight:12,
-        paddingTop:12,
-        paddingBottom:12,
-        marginTop:20,
-        borderRadius:5
+        paddingLeft:size(12),
+        paddingRight:size(12),
+        paddingTop:size(12),
+        paddingBottom:size(12),
+        marginTop:size(20),
+        borderRadius:size(5)
     },
     textArexxInput:{
-        marginTop:12
+        marginTop:size(12)
     },
     formItemLeft:{
-        width:100
+        width:size(100)
     },
     formItemLeftText:{
-        color:'#666'
+        color:'#666',
+        fontSize:size(14)
     },
     getCodeBtn:{
-        marginLeft:15
+        marginLeft:size(15)
     }
 })
 

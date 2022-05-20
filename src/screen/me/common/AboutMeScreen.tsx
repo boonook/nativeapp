@@ -2,7 +2,8 @@ import React,{useState,useEffect} from "react";
 import {StyleSheet,Text,View} from 'react-native';
 import Headers from '@/Components/header/Headers';
 import DeviceInfo from 'react-native-device-info';
-import ImageScreen from '@/Components/Image/ImageScreen'
+import ImageScreen from '@/Components/Image/ImageScreen';
+import {size} from '@/utils';
 let AboutMeScreen = (props:any)=>{
     let [version,setVersion] = useState('1.0.0');
     let [appName,setAppName] = useState('帮办管家');
@@ -24,7 +25,7 @@ let AboutMeScreen = (props:any)=>{
             />
             <View style={styles.bodybox}>
                 <View style={styles.bodyboxTop}>
-                    <ImageScreen width={80} source={require('@/assess/images/logo.png')}/>
+                    <ImageScreen width={size(80)} source={require('@/assess/images/logo.png')}/>
                     <Text style={styles.bodyboxTopText}>{appName}</Text>
                 </View>
                 <View style={styles.bodyboxFooter}>
@@ -48,22 +49,22 @@ const styles = StyleSheet.create({
     },
     bodyboxTop:{
         flex:1,
-        paddingTop:40,
+        paddingTop:size(40),
         flexDirection:'column',
         alignItems:'center'
     },
     bodyboxFooter:{
-        paddingBottom:30,
+        paddingBottom:size(30),
         textAlign:'center'
     },
     bodyboxTopText:{
         fontWeight:'600',
         color:'#444',
-        marginTop:8,
-        fontSize:16
+        marginTop:size(8),
+        fontSize:size(16)
     },
     bodyboxFooterText:{
-        fontSize:14,
+        fontSize:size(14),
         color:'#999',
     }
 })

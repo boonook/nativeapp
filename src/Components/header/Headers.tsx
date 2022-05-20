@@ -1,8 +1,10 @@
 import React, {Component, ReactElement} from 'react';
 import { View, Text,StyleSheet,SafeAreaView,Platform,NativeModules,TouchableOpacity,StatusBar} from 'react-native';
+import {size} from '@/utils';
 import {
     Icon,
   } from 'react-native-ui-lib';
+
 const { StatusBarManager } = NativeModules;
 
 let statusBarHeight;
@@ -93,8 +95,8 @@ export default class Headers extends Component<HeaderProps,any>{
                 <View style={[styles.headerBox,this.props.border?styles.headerBoxBorder:null]}>
                     <View style={styles.headerBoxLeft}>
                         {this.props.leftContent}
-                        {this.props.leftIcon?<TouchableOpacity onPress={()=>{this.goBack()}}><Icon source={this.props.leftIcon||require('@/assess/images/icon/back.png')} size={20} tintColor={this.props.centerColor||'#444'}/></TouchableOpacity>:null}
-                        {this.props.closeIcon?<TouchableOpacity onPress={()=>{this.onClose()}}><Icon source={require('@/assess/images/icon/close.png')} size={20} style={{marginLeft:10}} tintColor={this.props.centerColor||'#444'}/></TouchableOpacity>:null}
+                        {this.props.leftIcon?<TouchableOpacity onPress={()=>{this.goBack()}}><Icon source={this.props.leftIcon||require('@/assess/images/icon/back.png')} size={size(20)} tintColor={this.props.centerColor||'#444'}/></TouchableOpacity>:null}
+                        {this.props.closeIcon?<TouchableOpacity onPress={()=>{this.onClose()}}><Icon source={require('@/assess/images/icon/close.png')} size={size(20)} style={{marginLeft:size(10)}} tintColor={this.props.centerColor||'#444'}/></TouchableOpacity>:null}
                     </View>
                     <View style={styles.headerBoxCenter}>
                         {this.props.centerContent}
@@ -105,7 +107,7 @@ export default class Headers extends Component<HeaderProps,any>{
                     }}>
                         {this.props.rightContent}
                         {this.props.rightTitle?<Text style={[styles.headerBoxRightText,{color:this.props.rightColor||'#444'}]} numberOfLines={1}>{this.props.rightTitle}</Text>:null}
-                        {this.props.rightIcon?<Icon source={this.props.rightIcon||require('@/assess/images/icon/menu.png')} size={20} tintColor={this.props.leftColor||'#444'}/>:null}
+                        {this.props.rightIcon?<Icon source={this.props.rightIcon||require('@/assess/images/icon/menu.png')} size={size(20)} tintColor={this.props.leftColor||'#444'}/>:null}
                     </TouchableOpacity>
                 </View>
             </SafeAreaView>
@@ -117,9 +119,9 @@ const styles = StyleSheet.create({
         width:'100%',
         flexDirection:'row',
         alignItems:'center',
-        paddingLeft:12,
-        paddingRight:12,
-        paddingBottom:15,
+        paddingLeft:size(12),
+        paddingRight:size(12),
+        paddingBottom:size(15),
     },
     headerBoxBorder:{
         borderStyle:'solid',
@@ -127,7 +129,7 @@ const styles = StyleSheet.create({
         borderBottomColor:'#eee'
     },
     headerBoxCenter:{
-        width:120,
+        width:size(120),
         textAlign:'center',
     },
     headerBoxLeft:{
@@ -136,7 +138,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'flex-start',
-        height:30
+        height:size(30)
     },
     headerBoxRight:{
         flex:1,
@@ -156,6 +158,6 @@ const styles = StyleSheet.create({
     headerBoxCenterText:{
         textAlign:'center',
         fontWeight:'600',
-        fontSize:16
+        fontSize:size(16)
     }
 })
