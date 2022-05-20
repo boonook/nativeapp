@@ -54,3 +54,8 @@
 
 <img src="./src/assess/images/微信图片_20220519102627.jpg" width="400px" alt="male" /> 
 
+
+```js
+git push github master
+```
+
