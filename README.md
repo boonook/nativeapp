@@ -15,8 +15,13 @@
 <img src="./src/assess/images/tinified/03E8A839A11767DA501B458773BA3B71.jpg" width="300px" alt="male" />
 <img src="./src/assess/images/tinified/A8D78639B760401D75A2533E7C730A00.png" width="300px" alt="male" />
 
+# 缓存以及清理缓存（主要针对网络图片）
+<img src="./src/assess/images/tinified/huancun.jpg" width="300px" alt="male" />
+
 # 语言设置目前只有中文和英文（可自由添加自己想要的语言类型）
 <img src="./src/assess/images/tinified/C01BE7F380084B7F484057CCE089EF84.png" width="300px" alt="male" />
+<img src="./src/assess/images/tinified/zh.png" width="150px" alt="male" />
+<img src="./src/assess/images/tinified/en.png" width="150px" alt="male" />
 
 # 生成二维码，长按二维码可保存
 <img src="./src/assess/images/tinified/73FB31A62C7F95FDB45B28D67D9FF8F9.png" width="300px" alt="male" /> 
