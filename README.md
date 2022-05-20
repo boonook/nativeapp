@@ -56,7 +56,7 @@
 ```
 
 # 主题切换 （demo在src/me/common/MySettingScreen.ts）
-<img src="https://upload-images.jianshu.io/upload_images/9619819-0af25bfa3dee8722.gif" width="300px" alt="male" /> 
+<img src="./src/assess/images/tinified/zhuti.gif" width="300px" alt="male" /> 
 
 # <h1 style="color:red">您的支持将是我最大的动力</h1>
 
