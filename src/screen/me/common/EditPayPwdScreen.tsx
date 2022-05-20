@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react";
 import { View,Text,StyleSheet,TextInput,StatusBar,Dimensions,TouchableOpacity} from 'react-native';
-import theme from '@/theme/theme.js'
 import Headers from "@/Components/header/Headers";
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {getForgetPwdCode,resetPassword} from "@/Api/login";
@@ -90,7 +89,7 @@ const EditPayPwdScreen = (props) => {
                     </View>
                     <View style={styles.loginBtn}>
                         <TouchableOpacity onPress={onSureAndLogin}>
-                            <View style={{backgroundColor:theme.backgroundColor,borderRadius:size(5)}}>
+                            <View style={{backgroundColor:'#1868EF',borderRadius:size(5)}}>
                                 <Text style={styles.loginBtnText}>确认修改支付密码</Text>
                             </View>
                         </TouchableOpacity>
@@ -120,7 +119,7 @@ const styles = StyleSheet.create({
         paddingRight:size(24),
     },
     formContentTop:{
-        backgroundColor:theme.backgroundColor,
+        backgroundColor:'#1868EF',
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
@@ -198,7 +197,7 @@ const styles = StyleSheet.create({
         color:'#666'
     },
     zhuCeBoxBtnText:{
-        color:theme.backgroundColor
+        color:'#1868EF'
     },
     textArexx:{
         backgroundColor:'#eee',

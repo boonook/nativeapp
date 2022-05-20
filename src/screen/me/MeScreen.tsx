@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useContext} from "react";
 import _ from 'lodash';
 import { StyleSheet, ScrollView,Linking} from 'react-native';
 import DeviceInfo from 'react-native-device-info';
@@ -19,10 +19,14 @@ import {openCameraPermission} from '@/utils/camera';
 import NavigationService from "@/utils/NavigationService";
 import ImageZoomViewer from '@/Components/ImageZoomViewer/index';
 import {size} from '@/utils';
+import {ThemeContext} from '@/theme/ThemeContextProvider'
 
 let MeScreen = (props:any)=>{
     let [visible,setVisible] = useState(false);
     let [modalVisible,setModalVisible] = useState(false);
+
+    const {themeName,theme,changeTheme} = useContext(ThemeContext);
+
     const imgArr = [
         {url:"https://cdn.133.cn/ticket/vue/promotion/zhoubichang/gtgjshare.png"},
         {url:'https://cdn.133.cn/ticket/vue/promotion/zhoubichang/hbgjshare.png'}
@@ -78,13 +82,13 @@ let MeScreen = (props:any)=>{
     },[])
 
     return (
-            <View style={{flex: 1, backgroundColor: '#eee'}}>
+            <View style={{flex: 1,backgroundColor:theme.colors.head_bg}}>
                 <Headers
                     //  title={Language.t("mine.title")}
                     border={false}
                     barStyle={0}
-                    backgroundColor={`rgba(255,255,255,1)`}
-                    centerColor={'#666'}
+                    backgroundColor={theme.colors.head_bg}
+                    centerColor={theme.colors.head_text_color}
                     // rightIcon={require('@/assess/images/icon/menu.png')}
                     {...props}
                 />
