@@ -36,7 +36,7 @@
 
 # 浏览器h5唤醒app
 
-# 权限操作
+# 权限操作（待完善）
 
 # 启动页设置（可直接更换图片即可）
 <img src="./src/assess/images/tinified/启动页.jpg" width="300px" alt="male" /> 
