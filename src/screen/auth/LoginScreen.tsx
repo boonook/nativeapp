@@ -14,7 +14,7 @@ import {
 import Language from '@/language/Language'
 
 let LoginScreen = (props:any)=>{
-    let [phone,setPhone] = useState('17798235471');
+    let [phone,setPhone] = useState('13838384438');
     let [password,setPassword] = useState('123456');
     let [test,setTest] = useState('123456');
     const store:any = userStore();

@@ -34,6 +34,7 @@
 # 权限操作
 
 # 启动页设置（可直接更换图片即可）
+<img src="./src/assess/images/tinified/启动页.jpg" width="300px" alt="male" /> 
 
 # app图标可直接更换图片
 
