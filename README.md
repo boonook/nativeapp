@@ -55,6 +55,9 @@
   export const size = s =>Dimensions.get('window').width / 375 * s;
 ```
 
+# 主题切换 （demo在src/me/common/MySettingScreen.ts）
+<img src="https://upload-images.jianshu.io/upload_images/9619819-0af25bfa3dee8722.gif" width="300px" alt="male" /> 
+
 # <h1 style="color:red">您的支持将是我最大的动力</h1>
 
 <img src="./src/assess/images/微信图片_20220519102627.jpg" width="400px" alt="male" /> 
