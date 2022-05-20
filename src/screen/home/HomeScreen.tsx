@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from "react";
 import _ from 'lodash';
-import { StyleSheet, ScrollView, StatusBar,ImageBackground} from 'react-native';
+import { StyleSheet, ScrollView,StatusBar} from 'react-native';
 import {
     Text,
     View,
@@ -18,7 +18,7 @@ import {
 import Headers from '@/Components/header/Headers';
 import Languagess from '@/language/Language'
 import {longOptions} from './longOptions';
-const fenpeibl = require('@/assess/images/home/fenpeibl.png');
+
 let HomeScreen = (props:any)=>{
     const ButtonSpace = 20;
     const {Toast} = Incubator;
@@ -63,11 +63,7 @@ let HomeScreen = (props:any)=>{
         );
     };
     useEffect(()=>{
-        console.log('参数-------------------',props.route.params);
-        props.navigation.addListener('focus', () => {
-            StatusBar.setBarStyle('dark-content');
-            StatusBar.setBackgroundColor('#fff')
-        });
+        StatusBar.setHidden(false);
         setTimeout(() => {
             setAnimationConfig(
                 {
@@ -189,12 +185,11 @@ let HomeScreen = (props:any)=>{
                             placeholder="Favorite Language"
                             floatingPlaceholder
                             value={language}
-                            enableModalBlur={false}
+                            // enableModalBlur={false}
                             onChange={item => setLanguage(item)}
-                            topBarProps={{title: 'Languages'}}
+                            topBarProps={{title: 'Languages',useSafeArea:true}}
                             style={{color: Colors.red20}}
                             showSearch
-                            useSafeArea={true}
                             searchPlaceholder={'Search a language'}
                             searchStyle={{color: Colors.blue30, placeholderTextColor: Colors.grey50}}
                             // onSearchChange={value => console.warn('value', value)}
@@ -206,12 +201,12 @@ let HomeScreen = (props:any)=>{
                         <View>
                             <Picker
                                 marginT-20
+                                topBarProps={{title: 'Languages Two',useSafeArea:true}}
                                 placeholder="Favorite Languages (up to 3)"
                                 value={languages}
                                 onChange={items => setLanguages(items)}
                                 mode={Picker.modes.MULTI}
                                 selectionLimit={3}
-                                useSafeArea={true}
                                 rightIconSource={dropdown}
                             >
                                 {_.map(options, option => (
@@ -227,7 +222,6 @@ let HomeScreen = (props:any)=>{
                                 value={nativePickerValue}
                                 onChange={nativePickerValue => setNativePickerValue(nativePickerValue)}
                                 rightIconSource={dropdown}
-                                useSafeArea={true}
                                 containerStyle={{marginTop: 20}}
                                 renderPicker={() => {
                                   return (
@@ -250,7 +244,6 @@ let HomeScreen = (props:any)=>{
                             // @ts-expect-error
                             containerStyle={{marginVertical: 20}}
                             title={'Date'}
-                            useSafeArea={true}
                             placeholder={'Select a date'}
                             dateFormat={'MMM D, YYYY'}
                             value={new Date('October 13, 2014')}
@@ -259,7 +252,6 @@ let HomeScreen = (props:any)=>{
                             Custom Input
                         </Text>
                         <DateTimePicker
-                            useSafeArea={true}
                             containerStyle={{marginVertical: 20}}
                             title={'Date'}
                             placeholder={'Select a date'}

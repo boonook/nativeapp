@@ -56,14 +56,13 @@ export default class Headers extends Component<HeaderProps,any>{
     componentDidMount() {
         this.props.navigation.addListener('focus', () => {
             StatusBar.setBarStyle(this.props.barStyle==0?'dark-content':'light-content');
-            StatusBar.setBackgroundColor(this.props.backgroundColor);
+            StatusBar.setBackgroundColor(this.props.backgroundColor?this.props.backgroundColor:'#fff');
             StatusBar.setTranslucent(false);
             StatusBar.setHidden(this.props.hidden?this.props.hidden:false);
         });
         this.props.navigation.addListener('didFocus', () => {
             StatusBar.setBarStyle('dark-content');
-            StatusBar.setBackgroundColor('#fff')
-            StatusBar.setBackgroundColor(this.props.backgroundColor);
+            StatusBar.setBackgroundColor(this.props.backgroundColor?this.props.backgroundColor:'#fff');
             StatusBar.setTranslucent(false);
             StatusBar.setHidden(false);
         });
