@@ -49,6 +49,11 @@
 
 # 防止表单过长导致键盘遮挡输入框的异常（./src/screen/auth/ForgetPasswordSccreen.tsx）
 
+# 屏幕大小适配（针对ipad需要用户自行设置）
+```js
+  ////375设计图尺寸
+  export const size = s =>Dimensions.get('window').width / 375 * s;
+```
 
 # <h1 style="color:red">您的支持将是我最大的动力</h1>
 

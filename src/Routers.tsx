@@ -77,14 +77,10 @@ function HomeTab() {
                 tabBarLabel:'首页'
             }}/>
             <Tab.Screen name="shoppingcart" component={MerchantScreen} options={{
-                // tabBarBadge:12,
-                tabBarBadgeStyle:{color:'#fff'},
                 headerShown: false,
-                tabBarLabel:'购物车'
+                tabBarLabel:'购物车',
             }}/>
             <Tab.Screen name="mine" component={MeScreen} options={{
-                // tabBarBadge:12,
-                tabBarBadgeStyle:{color:'#fff'},
                 headerShown: false,
                 tabBarLabel:'我的'
             }} />
