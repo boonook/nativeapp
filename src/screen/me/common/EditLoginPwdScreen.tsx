@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react";
 import { View,Text,StyleSheet,TextInput,StatusBar,Dimensions,TouchableOpacity} from 'react-native';
-import theme from '@/theme/theme.js'
 import { colors } from '@/assess/styles';
 import Headers from "@/Components/header/Headers";
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
@@ -122,7 +121,7 @@ const styles = StyleSheet.create({
         paddingRight:size(24),
     },
     formContentTop:{
-        backgroundColor:theme.backgroundColor,
+        backgroundColor:'#1868EF',
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
@@ -200,7 +199,7 @@ const styles = StyleSheet.create({
         color:'#666'
     },
     zhuCeBoxBtnText:{
-        color:theme.backgroundColor
+        color:'#1868EF',
     },
     textArexx:{
         backgroundColor:'#eee',

@@ -1,9 +1,9 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useContext} from "react";
 import {StyleSheet, Linking, Alert} from 'react-native';
 import Headers from '@/Components/header/Headers';
 import {userStore} from '@/contexts/storeHooks';
 import AsyncStorage from '@react-native-community/async-storage';
-import LinearGradient from 'react-native-linear-gradient'
+import {ThemeContext} from '@/theme/ThemeContextProvider'
 import RNFetchBlob from 'rn-fetch-blob';
 import {ImageCache} from 'react-native-img-cache';
 import {
@@ -24,6 +24,9 @@ let MySettingScreen = (props:any)=>{
     const store:any = userStore();
     const [visible,setVisible] = useState(false)
     const [cacheSize,setCacheSize] = useState('0M')
+    const {themeName,theme,changeTheme} = useContext(ThemeContext);
+
+    console.log('theme-----------------',theme);
 
     function onLoginOut(){
         setVisible(true);
@@ -79,6 +82,14 @@ let MySettingScreen = (props:any)=>{
         setCacheSize('0M');
     }
 
+    function onChangeDark(){
+        if(themeName=='default'){
+            changeTheme('dark')
+        }else{
+            changeTheme('default')
+        }
+    }
+
     // function onOpen(){
     //     let e= {
     //         url:"boonookbbgj://home?type=1234"
@@ -95,16 +106,17 @@ let MySettingScreen = (props:any)=>{
     // }
 
     return(
-        <View style={{ flex: 1,backgroundColor:"#eee"}}>
+        <View style={{ flex: 1,backgroundColor:theme.colors.head_bg}}>
             <Headers
                 title={'设置'}
-                border={true}
+                border={false}
                 barStyle={0}
                 leftIcon={require('@/assess/images/icon/back.png')}
                 rightIcon={require('@/assess/images/icon/menu.png')}
                 leftTitle={'返回'}
-                backgroundColor={'#fff'}
-                centerColor={'#666'}
+                backgroundColor={theme.colors.head_bg}
+                centerColor={theme.colors.head_text_color}
+                rightColor={theme.colors.head_text_color}
                 {...props}
             />
            <View style={styles.cardbox}>
@@ -123,9 +135,9 @@ let MySettingScreen = (props:any)=>{
                     </TouchableOpacity>
                 </View>
                 <View>
-                    <TouchableOpacity style={styles.loginOutBtn} onPress={()=>onLoginOut()}>
+                    <TouchableOpacity style={styles.loginOutBtn} onPress={()=>onChangeDark()}>
                         <View>
-                            <Text style={styles.loginOutBtnText}>退出登录</Text>
+                            <Text style={styles.loginOutBtnText}>切换为暗黑模式</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
