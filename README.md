@@ -60,7 +60,8 @@
 
 # <h1 style="color:red">您的支持将是我最大的动力</h1>
 
-<img src="./src/assess/images/微信图片_20220519102627.jpg" width="400px" alt="male" /> 
+<img src="./src/assess/images/微信图片_20220519102627.jpg" width="250px" alt="male" />
+<img src="./src/assess/images/tinified/weixin.jpg" width="250px" alt="male" /> 
 
 
 ```js
