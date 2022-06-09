@@ -1,8 +1,7 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useRef} from 'react';
 import {
     View,
     Text,
-    StatusBar,
     StyleSheet,
     FlatList,
     TouchableOpacity,
@@ -20,6 +19,7 @@ let MerchantScreen = (props:any)=>{
     let [refreshing,setRefreshing] = useState(false);
     let [refreshing2,setRefreshing2] = useState(false);
     let [isLoading,setIsLoading] = useState(true);
+    let flastlist = useRef(null);
 
     useEffect(()=>{
         setTimeout(()=>{

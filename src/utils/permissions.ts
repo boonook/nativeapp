@@ -3,15 +3,28 @@ import {Platform,Alert} from 'react-native';
 const permissionArr = [
   {
     type:'CAMERA',
-    title:'我需要您的相机权限',
+    name:'相机',
+    title:'需要获取您的相机权限来上传图片',
   },
   {
     type:'Contacts',
+    name:'通讯录',
     title:'我需要获取您的通讯录权限',
   },
   {
-    type:'Contacts',
-    title:'我需要获取您的通讯录权限',
+    type:'Microphone',
+    name:'麦克风',
+    title:'需要使用您的麦克风快捷输入、语音通话',
+  },
+  {
+    type:'PhotoLibrary',
+    name:'相册',
+    title:'需要获取您的相册权限来保存和选择图片',
+  },
+  {
+    type:'LocationWhenInUse',
+    name:'定位',
+    title:'需要获取您当前所在的位置信息权限',
   }
 ]
 export const ApplyPermissions = () => {
