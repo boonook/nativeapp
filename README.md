@@ -58,6 +58,17 @@
 # 主题切换 （demo在src/me/common/MySettingScreen.ts）
 <img src="./src/assess/images/tinified/zhuti.gif" width="300px" alt="male" /> 
 
+# 添加全局loading、Toast、Modal并设置回调函数以供全局调用
+```js
+  global.$ld() //使用loading
+  global.$cld() //关闭loading
+  global.$toast('提示信息') // toast提示
+  global.$box({
+    text: '提示信息', // 弹框提示信息(我设置的字段是text)
+    callback: (e) => {console.log('我点击了确定按钮',e)} //确定按钮要做的事件
+  }) // 弹框提示
+```
+
 # <h1 style="color:red">您的支持将是我最大的动力</h1>
 
 <img src="./src/assess/images/微信图片_20220519102627.jpg" width="250px" alt="male" />
@@ -68,13 +79,3 @@
 git push github master
 ```
 
-```js
-  ./gradlew assembleRelease
-  global.$ld() //使用loading
-  global.$cld() //关闭loading
-  global.$toast('提示信息') // toast提示
-  global.$box({
-    text: '提示信息', // 弹框提示信息(我设置的字段是text)
-    callback: () => {console.log('我点击了确定按钮')} //确定按钮要做的事件
-  }) // 弹框提示
-```
