@@ -94,20 +94,35 @@ let HomeScreen = (props:any)=>{
                         />
                         <Text style={styles.title}>Buttons</Text>
                         <Button
+                            onPress={()=>{
+                                global.$toast('提示信息!') // toast提示
+                            }}
                             backgroundColor="#30B650"
-                            label="SHUFFLE PLAY"
+                            label="Toast"
                             labelStyle={{fontWeight: '600'}}
                             style={{marginBottom: ButtonSpace}}
                             enableShadow
                         />
                         <Button
                             backgroundColor="#FB3C62"
-                            label="Get 3 Months Free"
+                            label="Loading"
+                            onPress={()=>{
+                                global.$ld() //使用loading
+                                setTimeout(()=>{
+                                    global.$cld() //关闭loading
+                                },2000)
+                            }}
                             borderRadius={size(7)}
                             style={{height:size(45), marginBottom: ButtonSpace}}
                         />
                         <Button
-                            label={'Red Button'}
+                            label={'Toast Modal'}
+                            onPress={()=>{
+                                global.$box({
+                                    text: '提示信息', // 弹框提示信息(我设置的字段是text)
+                                    callback: (e) => {console.log('e--------------------',e)} //确定按钮要做的事件
+                                  }) // 弹框提示
+                            }}
                             backgroundColor={Colors.red30}
                             style={{marginBottom: ButtonSpace}}
                         />

@@ -68,3 +68,13 @@
 git push github master
 ```
 
+```js
+  ./gradlew assembleRelease
+  global.$ld() //使用loading
+  global.$cld() //关闭loading
+  global.$toast('提示信息') // toast提示
+  global.$box({
+    text: '提示信息', // 弹框提示信息(我设置的字段是text)
+    callback: () => {console.log('我点击了确定按钮')} //确定按钮要做的事件
+  }) // 弹框提示
+```

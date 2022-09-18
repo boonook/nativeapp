@@ -23,6 +23,7 @@
     "babel-plugin-import": "^1.13.3",
     "babel-plugin-root-import": "^6.6.0",
     "babel-preset-expo": "^9.0.2",
+    "events": "^3.3.0",
     "fbjs": "^3.0.2",
     "i18n-js": "^3.9.2",
     "lodash": "^4.17.21",

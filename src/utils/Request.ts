@@ -156,8 +156,9 @@ export default class Request {
 
     static http = ({method=null,url=null, params={},formData=false,token=true}) => {
         console.log('loading...');
+        global.$ld() //使用loading
         let apiUrl = Api.Request_url + url;
-        let h = { platform:Platform.OS};
+        let h:any = { platform:Platform.OS};
         if(token){
             // @ts-ignore
             h={
@@ -186,7 +187,7 @@ export default class Request {
             }else{
                 h={...h,"Content-Type":'application/json'}
             }
-            let headers;
+            let headers:any;
             if(method+''!=='GET' && method+''!=='DELETE'){
                 headers = Request.makeHeaders(h);
                 params = Request.getParamsWithHeaders(params, headers, formData);
@@ -198,6 +199,7 @@ export default class Request {
                 body:params,
                 headers
             })).then(Request.checkResponse).then(Request.checkCode).catch(e => {
+                global.$cld() //关闭loading
                 console.error(e.message)
             });
         }
@@ -216,23 +218,24 @@ export default class Request {
 
     //检查响应
     static checkResponse(response) {
+        global.$cld() //关闭loading
         Request.setNetworkActivityIndicatorVisible(false);
         if (response.ok === true) {
             return response.json();
         } else {
             if (response.status + '' === '403') {
-                let error = new Error();
+                let error:any = new Error();
                 error.message = '授权信息无效,请重新登录';
                 error.code = 403;
                 throw error
             }
             if (response.status + '' === '400'||response.status + '' === '500') {
-                let error = new Error();
+                let error:any = new Error();
                 error.message = '服务器异常';
                 error.code = 400;
                 throw error
             }
-            let error = new Error();
+            let error:any = new Error();
             error.code = Number(response.status);
             return response.json()
                 .then(data => {
@@ -248,9 +251,10 @@ export default class Request {
 
     //检查返回状态码
     static checkCode(response) {
+        global.$cld() //关闭loading
         const code = Number(response.status);
         if (reloginCode.indexOf(code) !== -1) {
-            let error = {};
+            let error:any = {};
             error.message = response.message.replace('java.lang.Exception:', '');
             error.code = response.code;
             throw error
@@ -262,7 +266,7 @@ export default class Request {
                 },800)
             }else{
                 if(response.title+''==='error'){
-                    let error = new Error();
+                    let error:any = new Error();
                     error.message = response.data;
                     error.code = code;
                     throw error
@@ -283,7 +287,8 @@ export default class Request {
      * @return {{code: number; msg: string | any}}
      */
     static logError(error) {
-        log('请求错误', error);
+        global.$cld() //关闭loading
+        console.log('请求错误', error);
         if (error.message) {
             console.error(error.message.replace('java.lang.Exception:', ''));
         } else {
